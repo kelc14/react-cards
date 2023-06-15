@@ -9,9 +9,3 @@ const useFlipCard = (initialState = true) => {
 };
 
 export default useFlipCard;
-
-// import React, { useState } from 'react';
-// const useToggleState = (initialState = true) => {
-
-// }
-// export default useToggleState;
