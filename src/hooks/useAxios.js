@@ -5,8 +5,11 @@ import axios from "axios";
 const useAxios = (url) => {
   const [cards, setCards] = useState([]);
 
-  const addCard = async () => {
-    const response = await axios.get(url);
+  const addCard = async (name) => {
+    // click event is sending synthetic event object if no argument is passed, is there another way to handle this?
+    typeof name !== "string" ? (name = "") : (name = name);
+    const response = await axios.get(`${url}${name}`);
+
     setCards((cards) => [...cards, { ...response.data, id: uuid() }]);
   };
 
